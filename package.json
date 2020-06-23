@@ -1,0 +1,28 @@
+{
+  "name": "backnode",
+  "version": "1.0.0",
+  "description": "Node.js, Api rest com express, ORM Sequelize and MySql.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edilo/backnode.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "orm",
+    "sequelize",
+    "mysql",
+    "api",
+    "rest"
+  ],
+  "author": "Edilo Sousa da Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edilo/backnode/issues"
+  },
+  "homepage": "https://github.com/Edilo/backnode#readme"
+}

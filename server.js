@@ -19,7 +19,7 @@ const db = require('./app/models');
 db.sequelize.sync();
 
 app.get("/", (req, res) => {
-    res.json({message: "Wellcome to app node REST."});
+    res.json({message: "Wellcome to app node rest api"});
 });
 
 require("./app/routes/tutorial.routes")(app);

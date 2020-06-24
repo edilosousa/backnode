@@ -14,12 +14,17 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+const db = require('./app/models');
+
+db.sequelize.sync();
+
 app.get("/", (req, res) => {
     res.json({message: "Wellcome to app node REST."});
 });
 
-const PORT = process.env.PORT || 8080;
+require("./app/routes/tutorial.routes")(app);
 
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server iniciado na porta ${PORT}.`);
 });

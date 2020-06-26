@@ -49,7 +49,7 @@ exports.findAll = (req, res) => {
         });
 };
 
-// Recupera registros agrupados
+// Recupera registros agrupados sequelize para as definições
 exports.findAllByColaboradorGroupCargo = (req, res) => {
     Colaborador.findAll({ 
         group: ['cargo'],

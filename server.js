@@ -7,7 +7,7 @@ const app = express();
 
 //criando nossa origem de nossa aplicação no rotemento.
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "http://localhost:4200" 
 };
 //usando o cors para que a nossas solicitações ajax fiquem definida na origem definida.
 app.use(cors(corsOptions));

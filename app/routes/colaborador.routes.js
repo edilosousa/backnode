@@ -9,6 +9,9 @@ module.exports = app => {
     // Rota para listar todos os colaboradores
     router.get("/", colaboradores.findAll);
 
+    // Rota para listar todos as quantidades de colaboradores agrupados por cargos
+    router.get("/quantidade-por-cargo", colaboradores.findAllByColaboradorGroupCargo);
+
     // Rota para listar apenas um colaborador
     router.get("/:id", colaboradores.findOne);
 

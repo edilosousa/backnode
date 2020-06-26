@@ -1,4 +1,5 @@
 const db = require("../models");
+const Sequelize = require("sequelize");
 const Colaborador = db.colaborador;
 const Op = db.Sequelize.Op;
 
@@ -37,6 +38,25 @@ exports.findAll = (req, res) => {
     var condition = nome ? { nome: { [Op.like]: `%${nome}%` } } : null;
 
     Colaborador.findAll({ where: condition })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Erro ao buscar os registro"
+            });
+        });
+};
+
+// Recupera registros agrupados
+exports.findAllByColaboradorGroupCargo = (req, res) => {
+    Colaborador.findAll({ 
+        group: ['cargo'],
+        attributes: ['cargo', [Sequelize.fn('COUNT', 'cargo'), 'count']],
+        order: [[Sequelize.literal('count'), 'DESC']],
+        raw: true
+     })
         .then(data => {
             res.send(data);
         })
